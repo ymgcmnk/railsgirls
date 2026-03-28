@@ -10,16 +10,17 @@
 
 <p>There are currently <%= Idea.count %> active ideas</p>
 
-<div class="mb-3">
-  <%= link_to "New idea", new_idea_path, class: "btn btn-primary" %>
-</div>
+<%= link_to "Add a new idea", new_idea_path, class: "btn btn-primary mb-3" %>
 
-<div id="ideas">
+
+<div class="list-group w-auto">
   <% @ideas.order(id: :desc).each do |idea| %>
     <%= render idea %>
+    <!--
     <p>
       <%= link_to "Show this idea", idea %>
     </p>
+    -->
   <% end %>
 </div>
 
